@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const API = process.env.REACT_APP_API_URL || 'http://localhost:5042/api';
 =======
 const API = 'https://quantitymeasurementapp-backend-1.onrender.com/api';
 >>>>>>> e6b8b32 ([Devansh Singh]Add. Quantity Measurement App Frontend)
+=======
+const API = process.env.REACT_APP_API_URL || 'https://quantitymeasurementapp-backend-1.onrender.com/api';
+>>>>>>> 05667c4 ([Devansh Singh]Add. Quantity Measurement App Frontend)
 
 function getToken() {
   return localStorage.getItem('qm_token');
