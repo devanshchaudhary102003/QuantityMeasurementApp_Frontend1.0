@@ -340,8 +340,8 @@ function ConvertPanel({ type, units, onResult, onError }) {
   );
 }
 
-function ArithPanel({ type, units, onResult, onError }) {
-  const [op, setOp] = useState('add');
+function ArithPanel({ type, units, onResult, onError, initialOp }) {
+  const [op, setOp] = useState(initialOp || 'add');
   const [v1, setV1] = useState('1'); const [u1, setU1] = useState(units[0]);
   const [v2, setV2] = useState('1'); const [u2, setU2] = useState(units[0]);
   const badges = { add: '+', subtract: '−', divide: '÷' };
@@ -488,7 +488,7 @@ export default function DashboardPage() {
             {curAction === 'compare'    && <ComparePanel key={`c-${curType}`} type={curType} units={units} onResult={setResult} onError={setError} />}
             {curAction === 'convert'    && <ConvertPanel key={`v-${curType}`} type={curType} units={units} onResult={setResult} onError={setError} />}
             {['add','subtract','divide'].includes(curAction) && (
-              <ArithPanel key={`a-${curType}-${curAction}`} type={curType} units={units} onResult={setResult} onError={setError} />
+              <ArithPanel key={`a-${curType}-${curAction}`} type={curType} units={units} onResult={setResult} onError={setError} initialOp={curAction} />
             )}
 
             {/* 04 Result */}
